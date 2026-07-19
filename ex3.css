@@ -1,0 +1,94 @@
+ :root {
+    --bg: #0F0A1A;
+    --text: #E8E2FF;
+    --text-muted: #8C82A8;
+    --accent: #7C3AED;
+  }
+    * {box-sizing: border-box;
+      margin: 0;
+      padding: 0; 
+    }
+  
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", "Segoe UI", sans-serif;
+    padding: 70px 40px;
+  }
+  
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+  .top h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .top p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 350px;
+    line-height: 1.6;
+  }
+
+  /* Image Grid 2x2 */
+  .grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: auto;
+    gap: 25px;
+    margin-bottom: 90px;
+  }
+  .img-wrap { position: relative; border-radius: 10px; overflow: hidden; }
+  .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .label { position: absolute; bottom: 14px; left: 16px; font-size: 0.9rem; }
+  .sublabel { position: absolute; bottom: 14px; right: 16px; font-size: 0.85rem; color: var(--text-muted); }
+
+  .grid .img-wrap:nth-child(1) { grid-row: 1 / 3; aspect-ratio: 4/3; }
+  .grid .img-wrap:nth-child(2) { aspect-ratio: 16/9; }
+  .grid .img-wrap:nth-child(3) { aspect-ratio: 16/9; }
+  .grid .img-wrap:nth-child(4) { aspect-ratio: 4/3; }
+
+  /* Feature Section */
+  .feature {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: flex-start;
+  }
+  .feature-left { flex: 1; }
+  .code-icon {
+    font-size: 2.8rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .feature-left h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .feature-left h2 span {
+    color: var(--text-muted);
+    margin-right: 10px;
+    font-weight: 400;
+  }
+  .feature-right { flex: 1; max-width: 350px; }
+  .feature-right p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  @media(max-width: 900px){
+    .top, .feature { flex-direction: column; }
+    .grid { grid-template-columns: 1fr; }
+    .grid .img-wrap:nth-child(1) { grid-row: auto; }
+    .top h1 { font-size: 2.4rem; }
+  }
